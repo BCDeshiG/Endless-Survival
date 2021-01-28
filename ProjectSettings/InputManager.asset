@@ -38,8 +38,8 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire1
-    descriptiveName: 
+    m_Name: Fire
+    descriptiveName: Shoot your weapon
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left ctrl
@@ -54,11 +54,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
-    descriptiveName: 
+    m_Name: Interact
+    descriptiveName: Interact with objects
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
