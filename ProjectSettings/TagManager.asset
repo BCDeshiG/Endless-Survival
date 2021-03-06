@@ -44,3 +44,6 @@ TagManager:
   - name: Mobs
     uniqueID: 2529393271
     locked: 0
+  - name: UI
+    uniqueID: 3594198285
+    locked: 0

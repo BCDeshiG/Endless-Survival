@@ -4,33 +4,40 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-	public static int health = 100;
-	// Store player collision
-	public Rigidbody2D player;
+	public int baseHealth = 100; // Starting health
+	private int health = 100; // Current health
+	private Rigidbody2D mob; // Store entity collision
+
+	void Start()
+	{
+		// Initialise health
+		health = baseHealth;
+		// Gets the pointer
+		mob = GetComponent<Rigidbody2D>();
+	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		// Player death
+		// Entity death
 		if (health <= 0)
 		{
 			// Ensure health isn't negative
 			health = 0;
-			Debug.Log("You Died!"); // FIXME should probably start HUD
-			// Halt player movement
-			player.simulated = false;
+			// Halt entity movement
+			mob.simulated = false;
 		}
 	}
 
-	// Decreases player health
-	public static void damage(int amount)
+	// Decreases entity health
+	public void damage(int amount)
 	{
 		health -= amount;
 	}
 
-	// Increases player health
-	public static void heal(int amount)
+	// Returns current health
+	public int getHealth()
 	{
-		health += amount;
+		return health;
 	}
 }

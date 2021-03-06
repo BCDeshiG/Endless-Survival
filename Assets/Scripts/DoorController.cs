@@ -6,6 +6,13 @@ public class DoorController : MonoBehaviour
 {
 	public int cost = 0; // Cost to open, default to free
 	private bool interacting = false; // Check if interacting with door
+	private HUD hud; // Reference to HUD
+
+	// Finds HUD object and gets reference to it
+	void Start()
+	{
+		hud = GameObject.Find("HUD").GetComponent<HUD>();
+	}
 
 	// Open door if touching player, pressing E and has enough money
 	void OnCollisionStay2D(Collision2D other)
@@ -16,13 +23,13 @@ public class DoorController : MonoBehaviour
 			if(cost <= PlayerController.getMoney())
 			{
 				PlayerController.addMoney(cost * -1);
-				Debug.Log("Bought Door for $" + cost.ToString());
+				hud.prompt("Bought Door for $" + cost.ToString());
 				gameObject.SetActive(false); // Door no longer needs to exist
 			}
 			else
 			{
 				// Tell player they don't have enough money
-				Debug.Log("Not enough cash"); // FIXME spams log
+				hud.prompt("Not enough cash");
 			}
 		}
 	}
@@ -32,7 +39,7 @@ public class DoorController : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			Debug.Log("Press E to unlock for $" + cost.ToString());
+			hud.prompt("Press E to unlock for $" + cost.ToString());
 		}
 	}
 
