@@ -26,6 +26,7 @@ public class HealthManager : MonoBehaviour
 			health = 0;
 			// Halt entity movement
 			mob.simulated = false;
+			Destroy(mob.gameObject);
 		}
 	}
 

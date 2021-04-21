@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Enemy")
 		{
-			coroutine = playerDamage(10); //FIXME Get enemy's attack damage
+			EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+			coroutine = playerDamage(enemy.attackDamage);
 			StartCoroutine(coroutine);
 		}
 	}
