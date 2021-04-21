@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SpawnController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpawnController : MonoBehaviour
 	private Collider2D region; // Spawn region
 	private float timeGap = 0; // How long since last spawn
 	public const float spawnInterval = 1; // Wait time between spawns
+	private TilemapRenderer debugArea;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -19,6 +21,8 @@ public class SpawnController : MonoBehaviour
 			enemy.SetActive(false);
 		}
 		region = GetComponentInChildren<Collider2D>();
+		debugArea = GetComponentInChildren<TilemapRenderer>();
+		debugArea.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -41,6 +45,11 @@ public class SpawnController : MonoBehaviour
 			newEnemy.GetComponent<Rigidbody2D>().simulated = true;
 			// Reset wait
 			timeGap = 0;
+		}
+		// DEBUG toggle spawn region
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			debugArea.enabled = !debugArea.enabled;
 		}
 	}
 }
