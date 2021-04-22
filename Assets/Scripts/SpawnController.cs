@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class SpawnController : MonoBehaviour
 {
-	private GameObject[] enemyTypes; // Store what enemies can spawn here
+	public GameObject[] enemyTypes; // Store what enemies can spawn here
 	private Collider2D region; // Spawn region
 	private float timeGap = 0; // How long since last spawn
 	public const float spawnInterval = 1; // Wait time between spawns
@@ -14,15 +14,10 @@ public class SpawnController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		enemyTypes = GameObject.FindGameObjectsWithTag("Enemy");
-		// Preserve the original so it can be used to spawn more
-		foreach (GameObject enemy in enemyTypes)
-		{
-			enemy.SetActive(false);
-		}
 		region = GetComponentInChildren<Collider2D>();
 		debugArea = GetComponentInChildren<TilemapRenderer>();
 		debugArea.enabled = false;
+		gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -39,7 +34,7 @@ public class SpawnController : MonoBehaviour
 			// Choose random enemy type
 			GameObject enemy = enemyTypes[Random.Range(0, enemyTypes.Length)];
 			// Spawn enemy within region
-			GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity); // FIXME Wall spawns
+			GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);
 			// Breathe life into newly spawned enemy
 			newEnemy.SetActive(true);
 			newEnemy.GetComponent<Rigidbody2D>().simulated = true;

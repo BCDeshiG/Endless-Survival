@@ -20,10 +20,14 @@ public class EnemyController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		// DEBUG Kills enemy
+		// DEBUG Kills enemies in a radius
 		if(Input.GetKeyDown(KeyCode.K))
 		{
-			hp.damage(100);
+			Vector3 distanceToPlayer =  path.destination - transform.position;
+			if(distanceToPlayer.magnitude < 4f)
+			{
+				hp.damage(100);
+			}
 		}
 	}
 }

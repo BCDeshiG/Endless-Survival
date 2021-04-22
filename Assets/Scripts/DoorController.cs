@@ -7,6 +7,7 @@ public class DoorController : MonoBehaviour
 	public int cost = 0; // Cost to open, default to free
 	private bool interacting = false; // Check if interacting with door
 	private HUD hud; // Reference to HUD
+	public GameObject spawner; // Triggered when door opened
 
 	// Finds HUD object and gets reference to it
 	void Start()
@@ -25,6 +26,7 @@ public class DoorController : MonoBehaviour
 				PlayerController.addMoney(cost * -1);
 				hud.prompt("Bought Door for $" + cost.ToString());
 				gameObject.SetActive(false); // Door no longer needs to exist
+				spawner.SetActive(true); // Enable spawner
 			}
 			else
 			{
