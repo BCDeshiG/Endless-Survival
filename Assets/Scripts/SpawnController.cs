@@ -23,17 +23,19 @@ public class SpawnController : MonoBehaviour
 	void Update()
 	{
 		timeGap += Time.deltaTime;
-		// Choose random point inside region
-		float xPos = Random.Range(region.bounds.min.x, region.bounds.max.x);
-		float yPos = Random.Range(region.bounds.min.y, region.bounds.max.y);
-		Vector3 pos = new Vector3(xPos, yPos, 0);
-		// Check if waited long enough
-		if(timeGap > spawnInterval)
+		// Check if waited long enough and enemies left to spawn
+		if(timeGap > spawnInterval && WaveController.getSpawnCount() > 0)
 		{
+			// Choose random point inside region
+			float xPos = Random.Range(region.bounds.min.x, region.bounds.max.x);
+			float yPos = Random.Range(region.bounds.min.y, region.bounds.max.y);
+			Vector3 pos = new Vector3(xPos, yPos, 0);
 			// Choose random enemy type
 			GameObject enemy = enemyTypes[Random.Range(0, enemyTypes.Length)];
 			// Spawn enemy within region
 			GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);
+			// Decrement spawn counter
+			WaveController.decSpawnCount();
 			// Breathe life into newly spawned enemy
 			newEnemy.SetActive(true);
 			newEnemy.GetComponent<Rigidbody2D>().simulated = true;

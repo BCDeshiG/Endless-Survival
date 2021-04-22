@@ -27,6 +27,7 @@ public class HealthManager : MonoBehaviour
 			// Halt entity movement
 			mob.simulated = false;
 			Destroy(mob.gameObject);
+			WaveController.decAliveCount();
 		}
 	}
 
