@@ -8,19 +8,18 @@ public class SpawnController : MonoBehaviour
 	public GameObject[] enemyTypes; // Store what enemies can spawn here
 	private Collider2D region; // Spawn region
 	private float timeGap = 0; // How long since last spawn
-	public const float spawnInterval = 1; // Wait time between spawns
 	private TilemapRenderer debugArea;
+	public float spawnInterval = 1; // Wait time between spawns
 	
 	// Start is called before the first frame update
 	void Start()
 	{
 		region = GetComponentInChildren<Collider2D>();
-		debugArea = GetComponentInChildren<TilemapRenderer>();
+		debugArea = GetComponentInParent<TilemapRenderer>();
 		debugArea.enabled = false;
-		gameObject.SetActive(false);
 	}
 
-	// Update is called once per frame
+	// FIXME Randomise spawn chance to reduce rate
 	void Update()
 	{
 		timeGap += Time.deltaTime;

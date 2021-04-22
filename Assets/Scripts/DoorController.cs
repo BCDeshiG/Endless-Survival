@@ -13,6 +13,7 @@ public class DoorController : MonoBehaviour
 	void Start()
 	{
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
+		spawner.SetActive(false); // Disable spawner since not accessible yet
 	}
 
 	// Open door if touching player, pressing E and has enough money

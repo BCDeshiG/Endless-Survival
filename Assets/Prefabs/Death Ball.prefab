@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7865460144198566279}
   - component: {fileID: 7865460144198566329}
   - component: {fileID: 1536321434803642561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Death Ball
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7865460146006806679}
   - component: {fileID: 7865460146006806676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7865460146087030896}
   - component: {fileID: 7865460146087030897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
