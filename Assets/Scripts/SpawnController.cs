@@ -36,13 +36,15 @@ public class SpawnController : MonoBehaviour
 			GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);
 			// Decrement spawn counter
 			WaveController.decSpawnCount();
+			// Increase health based on round number
+			newEnemy.GetComponent<HealthManager>().baseHealth += (WaveController.getRound()-1) * 10;
 			// Breathe life into newly spawned enemy
 			newEnemy.SetActive(true);
 			newEnemy.GetComponent<Rigidbody2D>().simulated = true;
 			// Reset wait
 			timeGap = 0;
 		}
-		// DEBUG toggle spawn region
+		// DEBUG toggle spawn region visibility
 		if(Input.GetKeyDown(KeyCode.P))
 		{
 			debugArea.enabled = !debugArea.enabled;
