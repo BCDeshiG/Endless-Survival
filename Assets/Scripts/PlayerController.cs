@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D rb;
 	public float moveSpeed = 4f;
 	private Vector2 movement;
-	private Vector2 mousePos; // Normalised distance from centre
+	private Vector2 mouseDir; // Direction vector to cursor
 	private float angle = 0; // Player rotation
 	private static int money = 500; // Start player off with $500
 	private HealthManager hp; // Store player health
@@ -33,9 +33,8 @@ public class PlayerController : MonoBehaviour
 	{
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
-		mousePos.x = (Input.mousePosition.x / Screen.width) - 0.5f;
-		mousePos.y = (Input.mousePosition.y / Screen.height) - 0.5f;
-		angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+		mouseDir = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - rb.position;
+		angle = Mathf.Atan2(mouseDir.y, mouseDir.x) * Mathf.Rad2Deg;
 		if(Input.GetButton("Fire"))
 		{
 			coroutine = fireWeapon();
