@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 	// Coroutine for taking damage
 	private IEnumerator coroutine;
 	private bool invuln = false;
+	// Bullet stuff
+	public Rigidbody2D bullet;
+	private bool firing = false;
 
 	void Start()
 	{
@@ -33,6 +36,11 @@ public class PlayerController : MonoBehaviour
 		mousePos.x = (Input.mousePosition.x / Screen.width) - 0.5f;
 		mousePos.y = (Input.mousePosition.y / Screen.height) - 0.5f;
 		angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+		if(Input.GetButton("Fire"))
+		{
+			coroutine = fireWeapon();
+			StartCoroutine(coroutine);
+		}
 	}
 
 	// Moves the player and aims
@@ -66,6 +74,21 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			sprite.color = Color.red;
+		}
+	}
+
+	private IEnumerator fireWeapon()
+	{
+		if(!firing)
+		{
+			firing = true;
+			Rigidbody2D clone = Instantiate(bullet, transform.position, transform.rotation);
+			clone.gameObject.SetActive(true);
+			int bulletSpeed = clone.gameObject.GetComponent<BulletController>().bulletSpeed;
+			float fireRate = clone.gameObject.GetComponent<BulletController>().fireRate;
+			clone.velocity = clone.transform.right * bulletSpeed;
+			yield return new WaitForSeconds(fireRate);
+			firing = false;
 		}
 	}
 

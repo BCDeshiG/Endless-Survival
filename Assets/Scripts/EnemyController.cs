@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 	private Rigidbody2D rb;
 	private HealthManager hp;
 	public int attackDamage;
+	public int killReward = 100;
 
 	void Start()
 	{
@@ -29,5 +30,11 @@ public class EnemyController : MonoBehaviour
 				hp.damage(100);
 			}
 		}
+	}
+
+	// Reward the player with money when killed
+	void OnDestroy()
+	{
+		PlayerController.addMoney(killReward);
 	}
 }

@@ -49,7 +49,10 @@ public class HUD : MonoBehaviour
 		statusText.text += "  Money: $" + PlayerController.getMoney();
 		if(playerHealth.getHealth() <= 0)
 		{
+			// Display Game Over text
 			gameOver.SetActive(true);
+			// Show what wave the player reached
+			statusText.text = "Survived until Round " + WaveController.getRound();
 		}
 	}
 
