@@ -45,7 +45,7 @@ public class WaveController : MonoBehaviour
 		else // Begin next round
 		{
 			hud.prompt("Wave " + roundNum + " starting!", 4f);
-			spawnCount = 9 + roundNum; // Increment enemy count each round
+			spawnCount = 10 + (int)(roundNum/2); // Increment enemy count every other round
 			aliveCount = spawnCount;
 			ending = false;
 		}
