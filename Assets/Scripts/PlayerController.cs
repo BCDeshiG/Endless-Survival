@@ -13,18 +13,19 @@ public class PlayerController : MonoBehaviour
 	private HealthManager hp; // Store player health
 	private SpriteRenderer sprite;
 	private Color defColour; // Store default player colour
-	// Coroutine for taking damage
 	private IEnumerator coroutine;
 	private bool invuln = false;
 	// Bullet stuff
 	public Rigidbody2D bullet;
 	private bool firing = false;
 
+	// Get pointers to components
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		hp = GetComponent<HealthManager>();
 		sprite = GetComponentInChildren<SpriteRenderer>();
+		// Remember what colour player started as
 		defColour = sprite.color;
 	}
 
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 
+	// Take damage upon touching enemy
 	void OnCollisionStay2D(Collision2D other)
 	{
 		if(other.gameObject.tag == "Enemy")
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	// Coroutine for taking damage
 	private IEnumerator playerDamage(int damage)
 	{
 		// Prevents damage during cooldown
@@ -76,9 +79,10 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	// Coroutine for firing weapon
 	private IEnumerator fireWeapon()
 	{
-		if(!firing)
+		if(!firing && !PauseController.isPaused)
 		{
 			firing = true;
 			Rigidbody2D clone = Instantiate(bullet, transform.position, transform.rotation);
