@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-	private Rigidbody2D rb;
-	public int attackDamage = 50;
-	public int bulletSpeed = 16;
-	public float fireRate = 0.4f;
+	private Rigidbody2D rb; // Bullet collision
+	public int attackDamage;
 
 	// Start is called before the first frame update
 	void Start()
@@ -17,6 +15,7 @@ public class BulletController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		// Damages enemy on hit
 		if(other.gameObject.tag == "Enemy")
 		{
 			other.gameObject.GetComponent<HealthManager>().damage(attackDamage);

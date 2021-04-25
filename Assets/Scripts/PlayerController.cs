@@ -15,9 +15,8 @@ public class PlayerController : MonoBehaviour
 	private Color defColour; // Store default player colour
 	private IEnumerator coroutine;
 	private bool invuln = false;
-	// Bullet stuff
-	public Rigidbody2D bullet;
-	private bool firing = false;
+	// Weapon stuff
+	public WeaponController weapon;
 
 	// Get pointers to components
 	void Start()
@@ -27,6 +26,8 @@ public class PlayerController : MonoBehaviour
 		sprite = GetComponentInChildren<SpriteRenderer>();
 		// Remember what colour player started as
 		defColour = sprite.color;
+		// Enable weapon use
+		weapon.gameObject.SetActive(true);
 	}
 
 	// Update is called once per frame
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
 		angle = Mathf.Atan2(mouseDir.y, mouseDir.x) * Mathf.Rad2Deg;
 		if(Input.GetButton("Fire"))
 		{
-			coroutine = fireWeapon();
+			coroutine = weapon.fireWeapon(rb.position, transform.rotation);
 			StartCoroutine(coroutine);
 		}
 	}
@@ -76,22 +77,6 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			sprite.color = Color.red;
-		}
-	}
-
-	// Coroutine for firing weapon
-	private IEnumerator fireWeapon()
-	{
-		if(!firing && !PauseController.isPaused)
-		{
-			firing = true;
-			Rigidbody2D clone = Instantiate(bullet, transform.position, transform.rotation);
-			clone.gameObject.SetActive(true);
-			int bulletSpeed = clone.gameObject.GetComponent<BulletController>().bulletSpeed;
-			float fireRate = clone.gameObject.GetComponent<BulletController>().fireRate;
-			clone.velocity = clone.transform.right * bulletSpeed;
-			yield return new WaitForSeconds(fireRate);
-			firing = false;
 		}
 	}
 

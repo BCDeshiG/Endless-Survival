@@ -18,20 +18,6 @@ public class EnemyController : MonoBehaviour
 		hp = GetComponent<HealthManager>();
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		// DEBUG Kills enemies in a radius
-		if(Input.GetKeyDown(KeyCode.K))
-		{
-			Vector3 distanceToPlayer =  path.destination - transform.position;
-			if(distanceToPlayer.magnitude < 4f)
-			{
-				hp.damage(100);
-			}
-		}
-	}
-
 	// Reward the player with money when killed
 	void OnDestroy()
 	{
