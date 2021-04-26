@@ -10,9 +10,11 @@ public class HUD : MonoBehaviour
 	public GameObject promptObj;
 	private Text promptText;
 	public GameObject gameOver;
+	public Text weaponText;
 	// Store references to player
 	public GameObject player;
 	private HealthManager playerHealth;
+	private WeaponController weapon;
 	// How long prompt text has been displayed
 	private float timeGap = 0;
 	// How long text should be displayed for
@@ -22,6 +24,7 @@ public class HUD : MonoBehaviour
 	void Start()
 	{
 		playerHealth = player.GetComponent<HealthManager>();
+		weapon = player.GetComponent<PlayerController>().weapon;
 		promptText = promptObj.GetComponent<Text>();
 		promptObj.SetActive(false);
 		gameOver.SetActive(false);
@@ -42,11 +45,15 @@ public class HUD : MonoBehaviour
 		}
 	}
 
-	// Shows the player's health and money
+	// Shows the player's health, money and weapon status
 	void FixedUpdate()
 	{
+		// Health and money
 		statusText.text = "Health: " + playerHealth.getHealth();
 		statusText.text += "  Money: $" + PlayerController.getMoney();
+		// Weapon and ammo count
+		weaponText.text = weapon.name + "  " + weapon.bullet.name;
+		weaponText.text += ": " + weapon.ammoCount;
 		if(playerHealth.getHealth() <= 0)
 		{
 			// Display Game Over text
