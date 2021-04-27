@@ -181,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   killReward: 100
+  itemDrops: []
+  itemChance: 0.05
 --- !u!1 &7865460146006806678
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,22 +5,31 @@ using Pathfinding;
 
 public class EnemyController : MonoBehaviour
 {
-	private AIPath path;
-	private Rigidbody2D rb;
 	private HealthManager hp;
-	public int attackDamage;
-	public int killReward = 100;
+	public int attackDamage; // How much damage is dealt to the player
+	public int killReward = 100; // Amount of money given to player when killed
+	public GameObject[] itemDrops; // Store what items can be dropped
+	public float itemChance = 0.05f; // 5% chance of dropping item
 
 	void Start()
 	{
-		path = GetComponent<AIPath>();
-		rb = GetComponent<Rigidbody2D>();
 		hp = GetComponent<HealthManager>();
 	}
 
-	// Reward the player with money when killed
+	// Executes when enemy dies
 	void OnDestroy()
 	{
+		// Award player with money
 		PlayerController.addMoney(killReward);
+		// Chance to spawn item
+		if(Random.value <= itemChance && itemChance != 0)
+		{
+			// Choose random item
+			int randInt = Random.Range(0, itemDrops.Length);
+			// Spawn item
+			GameObject item = Instantiate(itemDrops[randInt], transform.position, Quaternion.identity);
+			// Show in world
+			item.SetActive(true);
+		}
 	}
 }
