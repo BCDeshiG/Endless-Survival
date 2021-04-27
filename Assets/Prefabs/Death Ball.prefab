@@ -182,7 +182,7 @@ MonoBehaviour:
   attackDamage: 10
   killReward: 100
   itemDrops: []
-  itemChance: 0.05
+  itemChance: 0.2
 --- !u!1 &7865460146006806678
 GameObject:
   m_ObjectHideFlags: 0

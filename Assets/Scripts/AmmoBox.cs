@@ -18,6 +18,7 @@ public class AmmoBox : ItemPickup
 		{
 			// Give that weapon ammo
 			weapon.ammoCount += ammoAmount;
+			hud.prompt("Got " + ammoAmount + " bullets! (" + ammoType.name + ")");
 			// Pickup has been used
 			Destroy(box.gameObject);
 		}

@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
 	public int attackDamage; // How much damage is dealt to the player
 	public int killReward = 100; // Amount of money given to player when killed
 	public GameObject[] itemDrops; // Store what items can be dropped
-	public float itemChance = 0.05f; // 5% chance of dropping item
+	public float itemChance = 0.2f; // 20% chance of dropping item
 
 	void Start()
 	{
