@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 	private Color defColour; // Store default player colour
 	private IEnumerator coroutine;
 	private bool invuln = false;
-	// Weapon stuff
-	public WeaponController weapon;
+	public static bool speeding = false;
+	public WeaponController weapon; // Current weapon
 
 	// Get pointers to components
 	void Start()

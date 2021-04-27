@@ -6,7 +6,6 @@ using UnityEngine;
 public class SpeedShoes : ItemPickup
 {
     public float speedTime = 10f; // Duration of speed up
-    private float oldSpeed; // Remember old movement speed
     private IEnumerator coroutine;
     // Attached components
     public SpriteRenderer sprite;
@@ -15,26 +14,30 @@ public class SpeedShoes : ItemPickup
 	// Override method to double player speed
 	protected override void itemAction(Collider2D other)
 	{
-        // Hide item
-        box.enabled = false;
-        sprite.enabled = false;
-        halo.SetActive(false);
-        hud.prompt("Got Speed Shoes!");
-        // Coroutine for applying speed boost
-        coroutine = applySpeed(other);
-        StartCoroutine(coroutine);
+        // Check if already affected
+        if(!PlayerController.speeding)
+        {
+            PlayerController.speeding = true;
+            // Hide item
+            box.enabled = false;
+            sprite.enabled = false;
+            halo.SetActive(false);
+            hud.prompt("Got Speed Shoes!");
+            // Coroutine for applying speed boost
+            coroutine = applySpeed(other);
+            StartCoroutine(coroutine);
+        }
 	}
 
     private IEnumerator applySpeed(Collider2D other)
     {
-        // Get original movement speed
-        oldSpeed = other.GetComponent<PlayerController>().moveSpeed;
         // Speed up player for set duration
-        other.GetComponent<PlayerController>().moveSpeed = oldSpeed*2;
+        other.GetComponent<PlayerController>().moveSpeed *=2;
         yield return new WaitForSeconds(speedTime);
         // Revert to normal movement
-        other.GetComponent<PlayerController>().moveSpeed = oldSpeed;
+        other.GetComponent<PlayerController>().moveSpeed /= 2;
         hud.prompt("Effect has worn off!");
+        PlayerController.speeding = false;
         // Item has been used
         Destroy(box.gameObject);
     }
