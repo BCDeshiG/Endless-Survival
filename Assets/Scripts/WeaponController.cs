@@ -10,14 +10,16 @@ public class WeaponController : MonoBehaviour
 	public int attackDamage; // How much damage it inflicts
 	public int bulletSpeed; // How fast the bullets travel
 	public float fireRate; // Seconds per bullet
-	public int ammoCount; // How many bullets the player has
-	private HUD hud;
+	public int startingAmmo; // How many bullets player starts with
+	private int ammoCount; // Number of bullets left
+	private HUD hud; // Reference to HUD
 
 	void Start()
 	{
 		rb = bullet.GetComponent<Rigidbody2D>();
 		bullet.GetComponent<BulletController>().attackDamage = attackDamage;
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
+		ammoCount = startingAmmo;
 	}
 
 	// Coroutine for firing weapon
@@ -45,5 +47,14 @@ public class WeaponController : MonoBehaviour
 				yield return new WaitForSeconds(fireRate);
 			}
 		}
+	}
+
+	public void giveAmmo(int amount)
+	{
+		ammoCount += amount;
+	}
+	public int getAmmoCount()
+	{
+		return ammoCount;
 	}
 }

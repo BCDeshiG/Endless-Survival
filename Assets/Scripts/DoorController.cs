@@ -24,8 +24,8 @@ public class DoorController : MonoBehaviour
 		{
 			if(cost <= PlayerController.getMoney())
 			{
-				PlayerController.addMoney(cost * -1);
-				hud.prompt("Bought Door for $" + cost.ToString());
+				PlayerController.addMoney(-cost);
+				hud.prompt("Bought Door for $" + cost);
 				gameObject.SetActive(false); // Door no longer needs to exist
 				spawner.SetActive(true); // Enable spawner
 			}
@@ -42,7 +42,7 @@ public class DoorController : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			hud.prompt("Press E to unlock for $" + cost.ToString());
+			hud.prompt("Press E to unlock for $" + cost);
 		}
 	}
 

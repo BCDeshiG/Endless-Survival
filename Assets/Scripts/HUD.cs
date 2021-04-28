@@ -24,7 +24,6 @@ public class HUD : MonoBehaviour
 	void Start()
 	{
 		playerHealth = player.GetComponent<HealthManager>();
-		weapon = player.GetComponent<PlayerController>().weapon;
 		promptText = promptObj.GetComponent<Text>();
 		promptObj.SetActive(false);
 		gameOver.SetActive(false);
@@ -52,8 +51,9 @@ public class HUD : MonoBehaviour
 		statusText.text = "Health: " + playerHealth.getHealth();
 		statusText.text += "  Money: $" + PlayerController.getMoney();
 		// Weapon and ammo count
+		weapon = player.GetComponent<PlayerController>().weapon;
 		weaponText.text = weapon.name + "  " + weapon.bullet.name;
-		weaponText.text += ": " + weapon.ammoCount;
+		weaponText.text += ": " + weapon.getAmmoCount();
 		if(playerHealth.getHealth() <= 0)
 		{
 			// Display Game Over text

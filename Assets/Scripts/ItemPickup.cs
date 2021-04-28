@@ -7,7 +7,7 @@ public class ItemPickup : MonoBehaviour
 	protected Collider2D box; // Item hitbox
 	protected float aliveTime = 30f; // Time until item disappears
 	protected float timeGap = 0; // Time item has existed
-	protected HUD hud;
+	protected HUD hud; // Reference to HUD
 
 	// Start is called before the first frame update
 	protected void Start()
