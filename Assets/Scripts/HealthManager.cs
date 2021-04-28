@@ -26,8 +26,18 @@ public class HealthManager : MonoBehaviour
 			health = 0;
 			// Halt entity movement
 			mob.simulated = false;
-			Destroy(mob.gameObject);
-			WaveController.decAliveCount();
+			// Enemy death
+			if(mob.gameObject.tag != "Player")
+			{
+				// Despawn enemy
+				Destroy(mob.gameObject);
+				WaveController.decAliveCount();
+			}
+			else // Player death
+			{
+				// Hide player
+				mob.gameObject.SetActive(false);
+			}
 		}
 	}
 
