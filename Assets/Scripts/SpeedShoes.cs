@@ -41,4 +41,14 @@ public class SpeedShoes : ItemPickup
         // Item has been used
         Destroy(box.gameObject);
     }
+
+    // Despawn item if left uncollected too long
+	void FixedUpdate()
+	{
+		timeGap += Time.fixedDeltaTime;
+		if(timeGap > aliveTime && !PlayerController.speeding)
+		{
+			Destroy(box.gameObject);
+		}
+	}
 }
