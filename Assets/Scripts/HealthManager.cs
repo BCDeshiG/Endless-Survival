@@ -39,6 +39,11 @@ public class HealthManager : MonoBehaviour
 				mob.gameObject.SetActive(false);
 			}
 		}
+		// Limit health to 100%
+		if (health > baseHealth)
+		{
+			health = baseHealth;
+		}
 	}
 
 	// Decreases entity health

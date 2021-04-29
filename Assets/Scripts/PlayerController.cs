@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	private Vector2 movement;
 	private Vector2 mouseDir; // Direction vector to cursor
 	private float angle = 0; // Player rotation
-	private static int money = 5000; // Start player off with $500
+	private static int money = 500; // Start player off with $500
 	private HealthManager hp; // Store player health
 	private SpriteRenderer sprite;
 	private Color defColour; // Store default player colour

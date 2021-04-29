@@ -26417,6 +26417,7 @@ Transform:
   m_Children:
   - {fileID: 104617983}
   - {fileID: 1247372456}
+  - {fileID: 432262210}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26493,6 +26494,9 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 104617975}
   - {fileID: 1247372448}
+  - {fileID: 104617975}
+  - {fileID: 1247372448}
+  - {fileID: 432262211}
   spawnInterval: 1
 --- !u!1 &428422879
 GameObject:
@@ -26566,6 +26570,125 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1001 &432262209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 378234641}
+    m_Modifications:
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemChance
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: killReward
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemDrops.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 1568588203}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemDrops.Array.data[1]
+      value: 
+      objectReference: {fileID: 1568588203}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 699041305}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: itemDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 1282268811}
+    - target: {fileID: 7865460144198566273, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Name
+      value: Death Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566273, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566276, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: maxSpeed
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460144198566329, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: baseHealth
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146006806676, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146006806676, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146006806676, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146006806676, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146006806676, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146087030897, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865460146087030897, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+--- !u!4 &432262210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7865460144198566328, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+  m_PrefabInstance: {fileID: 432262209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &432262211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7865460144198566273, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+  m_PrefabInstance: {fileID: 432262209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &453214747
 GameObject:
   m_ObjectHideFlags: 0
@@ -26914,6 +27037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 2026411624}
   inventory: []
+  currentIndex: 0
 --- !u!1 &535160001
 GameObject:
   m_ObjectHideFlags: 0
@@ -29101,6 +29225,7 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 104617975}
   - {fileID: 1247372448}
+  - {fileID: 104617975}
   spawnInterval: 1
 --- !u!61 &1376459770
 BoxCollider2D:
@@ -29228,8 +29353,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
+  - {fileID: 1247372448}
   - {fileID: 104617975}
   - {fileID: 1247372448}
+  - {fileID: 104617975}
+  - {fileID: 1247372448}
+  - {fileID: 104617975}
+  - {fileID: 1247372448}
+  - {fileID: 432262211}
   spawnInterval: 1
 --- !u!61 &1601751719
 BoxCollider2D:
@@ -29612,6 +29743,9 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 104617975}
   - {fileID: 1247372448}
+  - {fileID: 104617975}
+  - {fileID: 1247372448}
+  - {fileID: 432262211}
   spawnInterval: 1
 --- !u!61 &1797852533
 BoxCollider2D:
@@ -32712,10 +32846,6 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
-      propertyPath: killReward
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: attackDamage
       value: 5
       objectReference: {fileID: 0}
@@ -33307,6 +33437,10 @@ PrefabInstance:
     - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: itemChance
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
+      propertyPath: killReward
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: itemDrops.Array.size
