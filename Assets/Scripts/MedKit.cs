@@ -10,10 +10,15 @@ public class MedKit : ItemPickup
 	// Override method to give health
 	protected override void itemAction(Collider2D other)
 	{
-		// Do negative damage to heal
-		other.GetComponent<HealthManager>().damage(-healAmount);
-		hud.prompt("Healed " + healAmount + " HP!");
-		// Pickup has been used
-		Destroy(box.gameObject);
+		// Check if player already at full health
+		HealthManager playerHP = other.GetComponent<HealthManager>();
+		if(playerHP.getHealth()<100)
+		{
+			// Do negative damage to heal
+			playerHP.damage(-healAmount);
+			hud.prompt("Healed " + healAmount + " HP!");
+			// Pickup has been used
+			Destroy(box.gameObject);
+		}
 	}
 }
