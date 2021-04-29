@@ -26418,6 +26418,8 @@ Transform:
   - {fileID: 104617983}
   - {fileID: 1247372456}
   - {fileID: 432262210}
+  - {fileID: 1492569456}
+  - {fileID: 1781016603}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26497,6 +26499,9 @@ MonoBehaviour:
   - {fileID: 104617975}
   - {fileID: 1247372448}
   - {fileID: 432262211}
+  - {fileID: 1492569455}
+  - {fileID: 1492569455}
+  - {fileID: 1781016602}
   spawnInterval: 1
 --- !u!1 &428422879
 GameObject:
@@ -26579,7 +26584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: itemChance
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1536321434803642561, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: killReward
@@ -26619,7 +26624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7865460144198566276, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: maxSpeed
-      value: 4.8
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 7865460144198566279, guid: fe00c3e6cfa2bca40a240dd9326fe8c2, type: 3}
       propertyPath: target
@@ -29230,6 +29235,7 @@ MonoBehaviour:
   - {fileID: 104617975}
   - {fileID: 1247372448}
   - {fileID: 104617975}
+  - {fileID: 1492569455}
   spawnInterval: 1
 --- !u!61 &1376459770
 BoxCollider2D:
@@ -29257,6 +29263,133 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 4}
   m_EdgeRadius: 0
+--- !u!1 &1492569455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+  m_PrefabInstance: {fileID: 2756571749072065401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1492569456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+  m_PrefabInstance: {fileID: 2756571749072065401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1495323987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 378234641}
+    m_Modifications:
+    - target: {fileID: 2429702810660707574, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 527615179}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemChance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: killReward
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: attackDamage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 1568588203}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[1]
+      value: 
+      objectReference: {fileID: 699041305}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 1282268811}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 1110124361}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809226, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 527615179}
+    - target: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Name
+      value: Blight Star (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787092, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: rotSpeed
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.b
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.r
+      value: 0.28134146
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750411559123, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750411559123, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558283415489425743, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558283415489425743, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558283415489425743, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
 --- !u!1 &1525269219
 GameObject:
   m_ObjectHideFlags: 0
@@ -29362,8 +29495,8 @@ MonoBehaviour:
   - {fileID: 1247372448}
   - {fileID: 104617975}
   - {fileID: 1247372448}
-  - {fileID: 104617975}
-  - {fileID: 1247372448}
+  - {fileID: 1492569455}
+  - {fileID: 1781016602}
   - {fileID: 432262211}
   spawnInterval: 1
 --- !u!61 &1601751719
@@ -29664,6 +29797,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 0
+--- !u!1 &1781016602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+  m_PrefabInstance: {fileID: 1495323987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1781016603 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+  m_PrefabInstance: {fileID: 1495323987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1789396584
 GameObject:
   m_ObjectHideFlags: 0
@@ -29748,7 +29891,7 @@ MonoBehaviour:
   - {fileID: 104617975}
   - {fileID: 1247372448}
   - {fileID: 104617975}
-  - {fileID: 1247372448}
+  - {fileID: 1492569455}
   - {fileID: 432262211}
   spawnInterval: 1
 --- !u!61 &1797852533
@@ -29824,6 +29967,7 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 104617975}
   - {fileID: 1247372448}
+  - {fileID: 1492569455}
   spawnInterval: 1
 --- !u!61 &1818452477
 BoxCollider2D:
@@ -33292,6 +33436,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2756571749072065401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 378234641}
+    m_Modifications:
+    - target: {fileID: 2429702810660707574, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 527615179}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 1568588203}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[1]
+      value: 
+      objectReference: {fileID: 1110124361}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[2]
+      value: 
+      objectReference: {fileID: 699041305}
+    - target: {fileID: 2756571749748809224, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: itemDrops.Array.data[3]
+      value: 
+      objectReference: {fileID: 1282268811}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809225, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809226, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 527615179}
+    - target: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Name
+      value: Blight Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571749748809238, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756571750214787093, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
+      propertyPath: m_Color.r
+      value: 0.37537345
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b404759591e939a46b35e9cdfbc38221, type: 3}
 --- !u!1001 &4106274333774260363
 PrefabInstance:
   m_ObjectHideFlags: 0
