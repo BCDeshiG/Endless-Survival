@@ -12,13 +12,13 @@ public class AmmoBox : ItemPickup
 	protected override void itemAction(Collider2D other)
 	{
 		// Get current weapon
-		WeaponController weapon = other.GetComponent<PlayerController>().weapon;
+		WeaponController weapon = other.GetComponent<WeaponManager>().currentWeapon;
 		// Check if ammo type matches the weapon
 		if(weapon.bullet == ammoType)
 		{
 			// Give that weapon ammo
 			weapon.giveAmmo(ammoAmount);
-			hud.prompt("Got " + weapon.getAmmoCount() + " bullets! (" + ammoType.name + ")");
+			hud.prompt("Got " + ammoAmount + " bullets! (" + ammoType.name + ")");
 			// Pickup has been used
 			Destroy(box.gameObject);
 		}

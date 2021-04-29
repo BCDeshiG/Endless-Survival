@@ -6,7 +6,7 @@ public class BuyWeapon : MonoBehaviour
 {
 	private Collider2D region; // Area you can buy weapon
 	public WeaponController weapon; // Weapon you buy here
-	private WeaponController currentWeapon; // Weapon player is currently using
+	private WeaponManager wm; // Player's weapons
 	public int cost; // How much money is required
 	private bool interacting = false; // Check if interacting with area
 	private bool buying = false; // Check if currently buying weapon
@@ -18,6 +18,7 @@ public class BuyWeapon : MonoBehaviour
 	{
 		region = GetComponent<Collider2D>();
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
+		wm = GameObject.Find("Player").GetComponent<WeaponManager>();
 	}
 
 	// Buy weapon if touching player, pressing E and has enough money
@@ -52,17 +53,20 @@ public class BuyWeapon : MonoBehaviour
 				PlayerController.addMoney(-cost);
 				hud.prompt("Bought " + weapon.name + " for $" + cost);
 				// Check if player is buying ammo
-				currentWeapon = other.gameObject.GetComponent<PlayerController>().weapon;
-				if(currentWeapon == weapon)
+				if(wm.inventory.Contains(weapon))
 				{
-					// Refill ammo
-					currentWeapon.giveAmmo(currentWeapon.startingAmmo);
+					// Refill ammo and switch weapon
+					weapon.giveAmmo(weapon.startingAmmo);
+					wm.currentWeapon.gameObject.SetActive(false);
+					wm.currentIndex = wm.inventory.IndexOf(weapon);
+					weapon.gameObject.SetActive(true);
 				}
 				else
 				{
 					// Replace weapon
-					currentWeapon.gameObject.SetActive(false);
-					other.gameObject.GetComponent<PlayerController>().weapon = weapon;
+					wm.currentWeapon.gameObject.SetActive(false);
+					wm.inventory.Add(weapon);
+					wm.currentIndex = wm.inventory.Count - 1;
 					weapon.gameObject.SetActive(true);
 				}
 			}

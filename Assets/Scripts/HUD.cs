@@ -51,7 +51,7 @@ public class HUD : MonoBehaviour
 		statusText.text = "Health: " + playerHealth.getHealth();
 		statusText.text += "  Money: $" + PlayerController.getMoney();
 		// Weapon and ammo count
-		weapon = player.GetComponent<PlayerController>().weapon;
+		weapon = player.GetComponent<WeaponManager>().currentWeapon;
 		weaponText.text = weapon.name + "  " + weapon.bullet.name;
 		weaponText.text += ": " + weapon.getAmmoCount();
 		if(playerHealth.getHealth() <= 0)

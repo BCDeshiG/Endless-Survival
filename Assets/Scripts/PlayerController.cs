@@ -9,25 +9,25 @@ public class PlayerController : MonoBehaviour
 	private Vector2 movement;
 	private Vector2 mouseDir; // Direction vector to cursor
 	private float angle = 0; // Player rotation
-	private static int money = 500; // Start player off with $500
+	private static int money = 5000; // Start player off with $500
 	private HealthManager hp; // Store player health
 	private SpriteRenderer sprite;
 	private Color defColour; // Store default player colour
 	private IEnumerator coroutine;
 	private bool invuln = false;
 	public static bool speeding = false;
-	public WeaponController weapon; // Current weapon
+	private WeaponManager wm; // Handles weapon stuff
 
 	// Get pointers to components
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		hp = GetComponent<HealthManager>();
+		wm = GetComponent<WeaponManager>();
 		sprite = GetComponentInChildren<SpriteRenderer>();
 		// Remember what colour player started as
 		defColour = sprite.color;
-		// Enable weapon use
-		weapon.gameObject.SetActive(true);
+
 	}
 
 	// Update is called once per frame
@@ -37,11 +37,6 @@ public class PlayerController : MonoBehaviour
 		movement.y = Input.GetAxisRaw("Vertical");
 		mouseDir = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - rb.position;
 		angle = Mathf.Atan2(mouseDir.y, mouseDir.x) * Mathf.Rad2Deg;
-		if(Input.GetButton("Fire"))
-		{
-			coroutine = weapon.fireWeapon(rb.position, transform.rotation);
-			StartCoroutine(coroutine);
-		}
 	}
 
 	// Moves the player and aims

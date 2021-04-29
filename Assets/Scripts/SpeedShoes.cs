@@ -32,10 +32,10 @@ public class SpeedShoes : ItemPickup
     private IEnumerator applySpeed(Collider2D other)
     {
         // Speed up player for set duration
-        other.GetComponent<PlayerController>().moveSpeed *=2;
+        other.GetComponent<PlayerController>().moveSpeed *= 1.5f;
         yield return new WaitForSeconds(speedTime);
         // Revert to normal movement
-        other.GetComponent<PlayerController>().moveSpeed /= 2;
+        other.GetComponent<PlayerController>().moveSpeed /= 1.5f;
         hud.prompt("Effect has worn off!");
         PlayerController.speeding = false;
         // Item has been used

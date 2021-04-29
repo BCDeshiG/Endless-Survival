@@ -18,7 +18,7 @@ public class PauseController : MonoBehaviour
 	// Pauses the game
 	void Update()
 	{
-		if(Input.GetButtonDown("Cancel") || Input.GetButtonDown("Submit"))
+		if(Input.GetButtonDown("Cancel"))
 		{
 			if(!isPaused)
 			{

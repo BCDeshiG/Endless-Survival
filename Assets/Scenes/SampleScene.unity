@@ -26813,6 +26813,7 @@ GameObject:
   - component: {fileID: 527615181}
   - component: {fileID: 527615182}
   - component: {fileID: 527615183}
+  - component: {fileID: 527615184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -26849,7 +26850,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  weapon: {fileID: 2026411624}
 --- !u!50 &527615181
 Rigidbody2D:
   serializedVersion: 4
@@ -26900,6 +26900,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 100
+--- !u!114 &527615184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527615178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23027ad372afed94290b624694dff4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 2026411624}
+  inventory: []
 --- !u!1 &535160001
 GameObject:
   m_ObjectHideFlags: 0
