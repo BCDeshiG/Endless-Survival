@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.3
-  height: 0.3
+  radius: 0.24
+  height: 0.24
   repathRate: 0.2
   canSearch: 1
   canMove: 1
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 10
   damageSound: {fileID: 8300000, guid: 5298a6b752515254aad6c20636ca20f1, type: 3}
+  healSound: {fileID: 0}
 --- !u!114 &2756571749748809224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cf63e233914c34fb671837ccc31e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 90
+  rotSpeed: 180
 --- !u!1 &2756571750411559121
 GameObject:
   m_ObjectHideFlags: 0

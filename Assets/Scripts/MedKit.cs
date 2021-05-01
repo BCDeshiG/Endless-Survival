@@ -15,7 +15,7 @@ public class MedKit : ItemPickup
 		if(playerHP.getHealth()<100)
 		{
 			// Do negative damage to heal
-			playerHP.damage(-healAmount);
+			playerHP.heal(healAmount);
 			hud.prompt("Healed " + healAmount + " HP!");
 			// Pickup has been used
 			Destroy(box.gameObject);

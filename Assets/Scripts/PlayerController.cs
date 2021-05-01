@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	private Color defColour; // Store default player colour
 	private IEnumerator coroutine;
 	private bool invuln = false;
+	public static bool isDead = false;
 	public static bool speeding = false;
 	private WeaponManager wm; // Handles weapon stuff
 

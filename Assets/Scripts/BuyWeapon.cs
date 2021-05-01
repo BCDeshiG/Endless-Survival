@@ -66,6 +66,7 @@ public class BuyWeapon : MonoBehaviour
 					// Replace weapon
 					wm.currentWeapon.gameObject.SetActive(false);
 					wm.inventory.Add(weapon);
+					AudioSource.PlayClipAtPoint(weapon.reloadSound, transform.position);
 					wm.currentIndex = wm.inventory.Count - 1;
 					weapon.gameObject.SetActive(true);
 				}

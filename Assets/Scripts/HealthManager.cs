@@ -18,10 +18,13 @@ public class HealthManager : MonoBehaviour
 		mob = GetComponent<Rigidbody2D>();
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void damage(int amount)
 	{
-		// Entity death
+		// Decrease entity health
+		health -= amount;
+		// Play sound when losing health
+		AudioSource.PlayClipAtPoint(damageSound, transform.position);
+		// Check if that killed entity
 		if (health <= 0)
 		{
 			// Ensure health isn't negative
@@ -39,27 +42,22 @@ public class HealthManager : MonoBehaviour
 			{
 				// Hide player
 				mob.gameObject.SetActive(false);
+				// Mark player as dead
+				PlayerController.isDead = true;
 			}
 		}
+	}
+
+	public void heal(int amount)
+	{
+		// Increase entity health
+		health += amount;
+		// Play healing sound
+		AudioSource.PlayClipAtPoint(healSound, transform.position);
 		// Limit health to 100%
 		if (health > baseHealth)
 		{
 			health = baseHealth;
-		}
-	}
-
-	// Decreases entity health
-	public void damage(int amount)
-	{
-		health -= amount;
-		// Play sound when losing health
-		if(amount > 0)
-		{
-			AudioSource.PlayClipAtPoint(damageSound, transform.position);
-		}
-		else
-		{
-			AudioSource.PlayClipAtPoint(healSound, transform.position);
 		}
 	}
 

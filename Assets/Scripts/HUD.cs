@@ -54,7 +54,7 @@ public class HUD : MonoBehaviour
 		weapon = player.GetComponent<WeaponManager>().currentWeapon;
 		weaponText.text = weapon.name + "  " + weapon.bullet.name;
 		weaponText.text += ": " + weapon.getAmmoCount();
-		if(playerHealth.getHealth() <= 0)
+		if(PlayerController.isDead)
 		{
 			// Display Game Over text
 			gameOver.SetActive(true);
