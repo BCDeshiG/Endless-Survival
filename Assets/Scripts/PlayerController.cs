@@ -19,9 +19,14 @@ public class PlayerController : MonoBehaviour
 	public static bool speeding = false;
 	private WeaponManager wm; // Handles weapon stuff
 
-	// Get pointers to components
 	void Start()
 	{
+		// Reset variables
+		money = 500;
+		isDead = false;
+		speeding = false;
+		invuln = false;
+		// Get pointers to components
 		rb = GetComponent<Rigidbody2D>();
 		hp = GetComponent<HealthManager>();
 		wm = GetComponent<WeaponManager>();

@@ -19,6 +19,7 @@ public class WeaponController : MonoBehaviour
 
 	void Start()
 	{
+		firing = false;
 		rb = bullet.GetComponent<Rigidbody2D>();
 		bullet.GetComponent<BulletController>().attackDamage = attackDamage;
 		hud = GameObject.Find("HUD").GetComponent<HUD>();

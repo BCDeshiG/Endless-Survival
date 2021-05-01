@@ -23,6 +23,7 @@ public class HUD : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		timeGap = 0;
 		playerHealth = player.GetComponent<HealthManager>();
 		promptText = promptObj.GetComponent<Text>();
 		promptObj.SetActive(false);

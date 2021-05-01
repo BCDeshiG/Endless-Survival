@@ -5,13 +5,14 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
 	protected Collider2D box; // Item hitbox
-	protected float aliveTime = 30f; // Time until item disappears
+	protected const float aliveTime = 30f; // Time until item disappears
 	protected float timeGap = 0; // Time item has existed
 	protected HUD hud; // Reference to HUD
 
 	// Start is called before the first frame update
 	protected void Start()
 	{
+		timeGap = 0;
 		box = GetComponent<Collider2D>();
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
 	}

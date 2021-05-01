@@ -16,6 +16,8 @@ public class BuyWeapon : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		interacting = false;
+		buying = false;
 		region = GetComponent<Collider2D>();
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
 		wm = GameObject.Find("Player").GetComponent<WeaponManager>();

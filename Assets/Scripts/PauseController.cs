@@ -7,12 +7,18 @@ using UnityEngine.SceneManagement;
 public class PauseController : MonoBehaviour
 {
 	public static bool isPaused = false;
+	// Pointers to pause screen objects
 	public GameObject pauseText;
+	public GameObject backButton;
+	public GameObject exitButton;
 
 	// Get pointer to text and hide it
 	void Start()
 	{
+		isPaused = false;
 		pauseText.SetActive(false);
+		backButton.SetActive(false);
+		exitButton.SetActive(false);
 	}
 
 	// Check if pressing pause or dead
@@ -38,11 +44,15 @@ public class PauseController : MonoBehaviour
 				Time.timeScale = 0; // Freeze time
 				pauseText.SetActive(true);
 			}
+			backButton.SetActive(true);
+			exitButton.SetActive(true);
 		}
 		else
 		{
 			Time.timeScale = 1; // Unfreeze time
 			pauseText.SetActive(false);
+			backButton.SetActive(false);
+			exitButton.SetActive(false);
 		}
 	}
 

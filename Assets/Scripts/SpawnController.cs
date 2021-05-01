@@ -13,6 +13,7 @@ public class SpawnController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		timeGap = 0;
 		region = GetComponentInChildren<Collider2D>();
 	}
 

@@ -13,6 +13,7 @@ public class DoorController : MonoBehaviour
 	// Finds HUD object and gets reference to it
 	void Start()
 	{
+		interacting = false;
 		hud = GameObject.Find("HUD").GetComponent<HUD>();
 		spawner.SetActive(false); // Disable spawner since not accessible yet
 	}

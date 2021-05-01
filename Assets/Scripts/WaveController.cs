@@ -14,8 +14,14 @@ public class WaveController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		hud = GameObject.Find("HUD").GetComponent<HUD>();
+		// Reset variables
+		roundNum = 1;
+		spawnCount = 10;
 		aliveCount = spawnCount;
+		timeGap = 0;
+		ending = false;
+		// Get pointer to HUD
+		hud = GameObject.Find("HUD").GetComponent<HUD>();
 	}
 
 	// Update is called once per frame

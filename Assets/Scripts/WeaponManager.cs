@@ -20,6 +20,8 @@ public class WeaponManager : MonoBehaviour
 		inventory = new List<WeaponController>();
 		// Add starting weapon to inventory
 		inventory.Add(currentWeapon);
+		// Reset index
+		currentIndex = 0;
 	}
 
 	// Update is called once per frame
