@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Heal player when touched
+	// Use pickup when touched
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.name == "Player")

@@ -13,6 +13,9 @@ public class WeaponController : MonoBehaviour
 	public int startingAmmo; // How many bullets player starts with
 	private int ammoCount; // Number of bullets left
 	private HUD hud; // Reference to HUD
+	public AudioClip fireSound; // Shooting sound
+	public AudioClip reloadSound; // Sound when getting ammo
+	public AudioClip emptySound; // Sound when out of ammo
 
 	void Start()
 	{
@@ -27,9 +30,9 @@ public class WeaponController : MonoBehaviour
 	{
 		if(!firing && !PauseController.isPaused)
 		{
+			firing = true;
 			if(ammoCount > 0)
 			{
-				firing = true;
 				// Decrement ammo count
 				ammoCount--;
 				// Create bullet
@@ -37,21 +40,23 @@ public class WeaponController : MonoBehaviour
 				clone.gameObject.SetActive(true);
 				// Fire bullet
 				clone.velocity = clone.transform.right * bulletSpeed;
-				// Cooldown
-				yield return new WaitForSeconds(fireRate);
-				firing = false;
+				AudioSource.PlayClipAtPoint(fireSound, transform.position);
 			}
 			else
 			{
 				hud.prompt("Out of " + bullet.name + " ammo!");
-				yield return new WaitForSeconds(fireRate);
+				AudioSource.PlayClipAtPoint(emptySound, transform.position);
 			}
+			// Cooldown
+			yield return new WaitForSeconds(fireRate);
+			firing = false;
 		}
 	}
 
 	public void giveAmmo(int amount)
 	{
 		ammoCount += amount;
+		AudioSource.PlayClipAtPoint(reloadSound, transform.position);
 	}
 	public int getAmmoCount()
 	{

@@ -7,6 +7,7 @@ public class SpeedShoes : ItemPickup
 {
     public float speedTime = 10f; // Duration of speed up
     private IEnumerator coroutine;
+    public AudioClip sound; // Item sound
     // Attached components
     public SpriteRenderer sprite;
     public GameObject halo;
@@ -31,6 +32,7 @@ public class SpeedShoes : ItemPickup
 
     private IEnumerator applySpeed(Collider2D other)
     {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
         // Speed up player for set duration
         other.GetComponent<PlayerController>().moveSpeed *= 1.5f;
         yield return new WaitForSeconds(speedTime);

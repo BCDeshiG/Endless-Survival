@@ -167,7 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 40
-  damageSound: {fileID: 8300000, guid: 5993b12d1b2bac940a96f6d8f97fc7d9, type: 3}
+  damageSound: {fileID: 8300000, guid: 019f41d8e9975cf4790466ccbf62c323, type: 3}
+  healSound: {fileID: 0}
 --- !u!114 &1536321434803642561
 MonoBehaviour:
   m_ObjectHideFlags: 0
