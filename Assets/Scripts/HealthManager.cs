@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
 	public int baseHealth = 100; // Starting health
 	private int health = 100; // Current health
 	private Rigidbody2D mob; // Store entity collision
+	public AudioClip damageSound; // Sound played when hurt
 
 	void Start()
 	{
@@ -50,6 +51,7 @@ public class HealthManager : MonoBehaviour
 	public void damage(int amount)
 	{
 		health -= amount;
+		AudioSource.PlayClipAtPoint(damageSound, transform.position);
 	}
 
 	// Returns current health
